@@ -69,14 +69,14 @@ Para representar a letra **H**, por exemplo, podemos usar um vetor de 7 linhas, 
 ```vhdl
 type caractere_t is array (0 to 6) of std_logic_vector(4 downto 0);
 
-constant P : caractere_t := (
-  "11110",  -- linha 0 (topo)
-  "10001",  -- linha 1
-  "10001",  -- linha 2
-  "11110",  -- linha 3
-  "10000",  -- linha 4
-  "10000",  -- linha 5
-  "10000"   -- linha 6 (base)
+constant M : caractere_t := (
+  "10001",  -- linha 0 (topo)
+  "11011",  -- linha 1
+  "10101",  -- linha 2
+  "10001",  -- linha 3
+  "10001",  -- linha 4
+  "10001",  -- linha 5
+  "10001"   -- linha 6 (base)
 );
 ```
 
