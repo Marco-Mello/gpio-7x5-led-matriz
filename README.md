@@ -1,7 +1,7 @@
 
 # Módulo Matriz de LEDs 7x5 — Projeto para a Disciplina de Design de Computadores
 
-![imgs/led_matriz_conectada_v0](imgs/led_matriz_conectada_v0)
+![imgs/led_matriz_conectada_v0](imgs/led_matriz_conectada_v0.jpeg)
 
 ## Visão Geral
 
