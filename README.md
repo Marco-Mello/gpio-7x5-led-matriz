@@ -1,5 +1,5 @@
 
-# Módulo Matriz de LEDs 7x5 — Projeto para a Disciplina de Design de Computadores
+# Módulo Matriz de LEDs 7x5 — GPIO-Terasic compatível
 
 ![imgs/led_matriz_conectada_v0](imgs/led_matriz_conectada_v0.jpeg)
 
@@ -26,14 +26,11 @@ Este projeto consiste em uma matriz de LEDs 7x5 desenvolvida com o objetivo de a
 
 ## Funcionamento
 
-Cada LED está ligado a um GPIO específico do barramento padrão GPIO-Terasic. O LED superior esquerdo está conectado ao GPIO[0], e o LED inferior direito ao GPIO[34].
-
-A placa permite que os LEDs da matriz 7x5 sejam acionados diretamente, bastando aplicar nível lógico alto (3,3V) ao respectivo pino.  
-A lógica de controle deve ser implementada em VHDL, podendo receber valores codificados como caracteres ou bitmaps a serem exibidos.
+Cada LED está ligado a um GPIO específico do barramento padrão GPIO-Terasic. O LED superior esquerdo está conectado ao GPIO[0], e o LED inferior direito ao GPIO[34]. A placa permite que os LEDs da matriz 7x5 sejam acionados diretamente, bastando aplicar nível lógico 1 (3,3V) ao respectivo pino. A lógica de controle deve ser implementada em VHDL, podendo receber valores codificados como caracteres ou bitmaps a serem exibidos.
 
 ## Diagrama de Conexão
 
-- As linhas e colunas da matriz são conectadas aos pinos GPIO da placa DE0-CV por meio do flat cable.  
+- As linhas e colunas da matriz são conectadas aos pinos GPIO da placa do kit de desenvolvimento por meio de um flat cable.  
 - A ativação dos LEDs é feita de forma coordenada entre colunas e linhas.  
 - A alimentação e o controle de corrente são providos pela placa FPGA, com resistores apropriados.  
 
