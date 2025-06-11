@@ -34,14 +34,76 @@ Cada LED está ligado a um GPIO específico do barramento padrão GPIO-Terasic. 
 - A ativação dos LEDs é feita de forma coordenada entre colunas e linhas.  
 - A alimentação e o controle de corrente são providos pela placa FPGA, com resistores apropriados.  
 
-## Código-Fonte (VHDL)
+## Exemplo de Código(VHDL)
+
+O código de exemplo abaixo está instanciando uma entidade chamada matriz_LED_Linhas [matriz_LED_Linhas.vhd]() e conectando suas saídas a um vetor de sinais chamado GPIO_1(barramentos de GPIO do kit terasic).
 
 ```vhdl
--- Exemplo genérico
-signal coluna : std_logic_vector(4 downto 0);  -- controle de colunas
-signal linha  : std_logic_vector(6 downto 0);  -- controle de linhas
--- lógica para multiplexação aqui
+MATRIZset : entity work.matriz_LED_Linhas
+			port map(
+			ADDRESS	=> sinalLocal, -- @256 - seleciona qual linha você deseja, através do valor em DADO (0 a 6) / @255 - quais leds você deseja acionar, através do valor em DADO (0 a 6)
+			DADO    => sinalLocal, -- quando o endereço for @256, o valor em dado representa qual linha será acionada, quando o valor for @255 representa qual o valor a ser "escrito" nessa linha
+			Lin0 		=> Lin0_GPIO,  -- vetor que representa as linha 0
+			Lin1 		=> Lin1_GPIO,  -- vetor que representa as linha 1
+			Lin2 		=> Lin2_GPIO,  -- vetor que representa as linha 2
+			Lin3 		=> Lin3_GPIO,  -- vetor que representa as linha 3
+			Lin4		=> Lin4_GPIO,  -- vetor que representa as linha 4
+			Lin5 		=> Lin5_GPIO,  -- vetor que representa as linha 5
+			Lin6 		=> Lin6_GPIO,  -- vetor que representa as linha 6	
+			CLK		=> CLK          			
+			);			
+			
+-- Lin0_GPIO
+GPIO_1(0)  <= Lin0_GPIO(4);
+GPIO_1(7)  <= Lin0_GPIO(3);
+GPIO_1(14) <= Lin0_GPIO(2);
+GPIO_1(21) <= Lin0_GPIO(1);
+GPIO_1(28) <= Lin0_GPIO(0);
+
+-- Lin1_GPIO
+GPIO_1(1)  <= Lin1_GPIO(4);
+GPIO_1(8)  <= Lin1_GPIO(3);
+GPIO_1(15) <= Lin1_GPIO(2);
+GPIO_1(22) <= Lin1_GPIO(1);
+GPIO_1(29) <= Lin1_GPIO(0);
+
+-- Lin2_GPIO
+GPIO_1(2)  <= Lin2_GPIO(4);
+GPIO_1(9)  <= Lin2_GPIO(3);
+GPIO_1(16) <= Lin2_GPIO(2);
+GPIO_1(23) <= Lin2_GPIO(1);
+GPIO_1(30) <= Lin2_GPIO(0);
+
+-- Lin3_GPIO
+GPIO_1(3)  <= Lin3_GPIO(4);
+GPIO_1(10) <= Lin3_GPIO(3);
+GPIO_1(17) <= Lin3_GPIO(2);
+GPIO_1(24) <= Lin3_GPIO(1);
+GPIO_1(31) <= Lin3_GPIO(0);
+
+-- Lin4_GPIO
+GPIO_1(4)  <= Lin4_GPIO(4);
+GPIO_1(11) <= Lin4_GPIO(3);
+GPIO_1(18) <= Lin4_GPIO(2);
+GPIO_1(25) <= Lin4_GPIO(1);
+GPIO_1(32) <= Lin4_GPIO(0);
+
+-- Lin5_GPIO
+GPIO_1(5)  <= Lin5_GPIO(4);
+GPIO_1(12) <= Lin5_GPIO(3);
+GPIO_1(19) <= Lin5_GPIO(2);
+GPIO_1(26) <= Lin5_GPIO(1);
+GPIO_1(33) <= Lin5_GPIO(0);
+
+-- Lin6_GPIO
+GPIO_1(6)  <= Lin6_GPIO(4);
+GPIO_1(13) <= Lin6_GPIO(3);
+GPIO_1(20) <= Lin6_GPIO(2);
+GPIO_1(27) <= Lin6_GPIO(1);
+GPIO_1(34) <= Lin6_GPIO(0);
 ```
+
+
 
 ## Mapeamento dos GPIOs
 
@@ -61,7 +123,7 @@ Cada LED está diretamente ligado a um pino específico, sem multiplexação. O 
 
 ## Exemplo de Bitmap de Caractere
 
-Para representar a letra **H**, por exemplo, podemos usar um vetor de 7 linhas, onde cada elemento é um vetor de 5 bits (colunas), sendo `1` para LED aceso e `0` para LED apagado:
+Para representar a letra **M**, por exemplo, podemos usar um vetor de 7 linhas, onde cada elemento é um vetor de 5 bits (colunas), sendo `1` para LED aceso e `0` para LED apagado:
 
 ```vhdl
 type caractere_t is array (0 to 6) of std_logic_vector(4 downto 0);
