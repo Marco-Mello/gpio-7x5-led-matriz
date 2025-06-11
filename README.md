@@ -42,7 +42,7 @@ O código de exemplo abaixo está instanciando uma entidade chamada matriz_LED_L
 MATRIZset : entity work.matriz_LED_Linhas
 	port map(
 	ADDRESS	=> sinalLocal, -- @256 - seleciona qual linha você deseja, através do valor em DADO (0 a 6) / @255 - quais leds você deseja acionar, através do valor em DADO (0 a 6)
-	DADO    => sinalLocal, -- quando o endereço for @256, o valor em dado representa qual linha será acionada, quando o valor for @255 representa qual o valor a ser "escrito" nessa linha
+	DADO    => sinalLocal, -- @256 em ADDRESS, o valor em DADO seleciona a linha a ser acionada / @255 representa qual o valor a ser "escrito" na respectiva linha
 	Lin0	=> Lin0_GPIO,  -- vetor que representa as linha 0
 	Lin1	=> Lin1_GPIO,  -- vetor que representa as linha 1
 	Lin2	=> Lin2_GPIO,  -- vetor que representa as linha 2
