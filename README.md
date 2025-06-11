@@ -40,18 +40,18 @@ O código de exemplo abaixo está instanciando uma entidade chamada matriz_LED_L
 
 ```vhdl
 MATRIZset : entity work.matriz_LED_Linhas
-			port map(
-			ADDRESS	=> sinalLocal, -- @256 - seleciona qual linha você deseja, através do valor em DADO (0 a 6) / @255 - quais leds você deseja acionar, através do valor em DADO (0 a 6)
-			DADO    => sinalLocal, -- quando o endereço for @256, o valor em dado representa qual linha será acionada, quando o valor for @255 representa qual o valor a ser "escrito" nessa linha
-			Lin0 		=> Lin0_GPIO,  -- vetor que representa as linha 0
-			Lin1 		=> Lin1_GPIO,  -- vetor que representa as linha 1
-			Lin2 		=> Lin2_GPIO,  -- vetor que representa as linha 2
-			Lin3 		=> Lin3_GPIO,  -- vetor que representa as linha 3
-			Lin4		=> Lin4_GPIO,  -- vetor que representa as linha 4
-			Lin5 		=> Lin5_GPIO,  -- vetor que representa as linha 5
-			Lin6 		=> Lin6_GPIO,  -- vetor que representa as linha 6	
-			CLK		=> CLK          			
-			);			
+	port map(
+	ADDRESS	=> sinalLocal, -- @256 - seleciona qual linha você deseja, através do valor em DADO (0 a 6) / @255 - quais leds você deseja acionar, através do valor em DADO (0 a 6)
+	DADO    => sinalLocal, -- quando o endereço for @256, o valor em dado representa qual linha será acionada, quando o valor for @255 representa qual o valor a ser "escrito" nessa linha
+	Lin0	=> Lin0_GPIO,  -- vetor que representa as linha 0
+	Lin1	=> Lin1_GPIO,  -- vetor que representa as linha 1
+	Lin2	=> Lin2_GPIO,  -- vetor que representa as linha 2
+	Lin3	=> Lin3_GPIO,  -- vetor que representa as linha 3
+	Lin4	=> Lin4_GPIO,  -- vetor que representa as linha 4
+	Lin5	=> Lin5_GPIO,  -- vetor que representa as linha 5
+	Lin6	=> Lin6_GPIO,  -- vetor que representa as linha 6	
+	CLK	=> CLK          			
+	);			
 			
 -- Lin0_GPIO
 GPIO_1(0)  <= Lin0_GPIO(4);
