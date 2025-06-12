@@ -32,7 +32,9 @@ Cada LED está ligado a um GPIO específico do barramento padrão GPIO-Terasic. 
 
 
 <!-- Imagem principal, acima das demais -->
-![Diagrama](imgs/gpio_matriz.svg)
+<div align="center">
+  <img src="imgs/gpio_matriz.svg" alt="Diagrama" width="60%" />
+</div>
 
 <!-- Duas imagens menores lado a lado -->
 <p float="left">
