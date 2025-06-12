@@ -48,7 +48,7 @@ Cada LED está ligado a um GPIO específico do barramento padrão GPIO-Terasic. 
 
 ## Exemplo de Código(VHDL)
 
-O código de exemplo abaixo está instanciando uma entidade chamada matriz_LED_Linhas [matriz_LED_Linhas.vhd]() e conectando suas saídas a um vetor de sinais chamado GPIO_1(barramentos de GPIO do kit terasic).
+O código de exemplo abaixo está instanciando uma entidade chamada matriz_LED_Linhas [matriz_LED_Linhas.vhd](src/matriz_LED_Linhas.vhd) e conectando suas saídas a um vetor de sinais chamado GPIO_1(barramentos de GPIO do kit terasic).
 
 ```vhdl
 MATRIZset : entity work.matriz_LED_Linhas
