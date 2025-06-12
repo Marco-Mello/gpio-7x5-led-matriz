@@ -30,6 +30,16 @@ Cada LED está ligado a um GPIO específico do barramento padrão GPIO-Terasic. 
 
 ## Diagrama de Conexão
 
+
+<!-- Imagem principal, acima das demais -->
+![Diagrama](imgs/gpio_matriz.svg)
+
+<!-- Duas imagens menores lado a lado -->
+<p float="left">
+  <img src="imgs/placa_padrao0.jpeg" alt="Montagem0" width="48%" />
+  <img src="imgs/placa_padrao1.jpeg" alt="Montagem1" width="48%" />
+</p>
+
 - As linhas e colunas da matriz são conectadas aos pinos GPIO da placa do kit de desenvolvimento por meio de um flat cable.  
 - A ativação dos LEDs é feita de forma coordenada entre colunas e linhas.  
 - A alimentação e o controle de corrente são providos pela placa FPGA, com resistores apropriados.  
